@@ -77,7 +77,9 @@ export const App = () => {
 								type="button"
 								onClick={() => clickHandler(button)}
 								disabled={
-									new RegExp('^[0-9]$').test(button) && isResultOperator
+									(new RegExp('^[0-9]$').test(button) ||
+										button === '=') &&
+									isResultOperator
 								}
 							>
 								{button}
